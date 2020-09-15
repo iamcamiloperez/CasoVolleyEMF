@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated GeneradorBase -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="CasoVolley.presentation.CasoVolleyModelWizardID"
+            name="%_UI_CasoVolleyModelWizard_label"
+            class="CasoVolley.presentation.CasoVolleyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CasoVolleyModelFile.gif">
+         <description>%_UI_CasoVolleyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated GeneradorBase -->
+      <editor
+            id="CasoVolley.presentation.CasoVolleyEditorID"
+            name="%_UI_CasoVolleyEditor_label"
+            icon="icons/full/obj16/CasoVolleyModelFile.gif"
+            extensions="casovolley"
+            class="CasoVolley.presentation.CasoVolleyEditor"
+            contributorClass="CasoVolley.presentation.CasoVolleyActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
