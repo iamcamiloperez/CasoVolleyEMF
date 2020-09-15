@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CasoVolley" nsURI="http://org/eclipse/example/casoVolley" nsPrefix="org.eclipse.example.casoVolley">
+  <eClassifiers xsi:type="ecore:EClass" name="Persona">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apellido" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fechaNacimiento" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sexo" eType="#//Sexo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="telefono" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direccion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Factura">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="estado" eType="#//EstadoPago"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="persona" eType="#//Persona"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tarjeta">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fechaInicio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="persona" eType="#//Persona"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Carta">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numeroCorreo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fecha" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contenido" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="persona" eType="#//Persona"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LibroMiembros">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="personas" eType="#//Persona"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Libro">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cartas" eType="#//Carta"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Sexo">
+    <eLiterals name="Masculino" value="1"/>
+    <eLiterals name="Femenino"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EstadoPago">
+    <eLiterals name="Pagado" value="1"/>
+    <eLiterals name="Pendiente"/>
+  </eClassifiers>
+</ecore:EPackage>
